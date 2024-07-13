@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Lugares Turísticos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <container-fluid>
+        <h1 class="my-4">Muéstrenos su opinión</h1>
+
+        <div class="container">
+            <form action="/add" method="post" class="mb-4">
+                <div class="form-group">
+                    <input type="text" name="nombre" class="form-control" placeholder="Nombre y apellido" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="zona_turistica" class="form-control" placeholder="Zona Turística visitada" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="provincia" class="form-control" placeholder="Provincia" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="descripcion" class="form-control" placeholder="Su descripción de la zona" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </form>
+
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Turista</th>
+                        <th>Zona</th>
+                        <th>Provincia</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for lugar in lugares %}
+                    <tr>
+                        <td>{{ lugar['nombre'] }}</td>
+                        <td>{{ lugar['zona_turistica'] }}</td>
+                        <td>{{ lugar['provincia'] }}</td>
+                        <td>{{ lugar['descripcion'] }}</td>
+                        <td>
+                            <a href="/edit/{{ lugar['id'] }}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="/delete/{{ lugar['id'] }}" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </container-fluid>
+
+</body>
+
+</html>

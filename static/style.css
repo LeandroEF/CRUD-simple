@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+		90deg in oklab,
+		#002733,
+		50%,
+		hsl(152, 94%, 27%),
+		#013e85);
+    text-align: center;
+}
+
+h1 {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+}
+
+form {
+    margin: 20px auto;
+    padding: 10px;
+    background: linear-gradient(
+		90deg in oklab,
+		#002733,
+		50%,
+		hsl(152, 94%, 27%),
+		#013e85);
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+input, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+}
+
+button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+tr {
+    background: linear-gradient(
+		90deg in oklab,
+		#002733,
+		50%,
+		hsl(152, 94%, 27%),
+		#013e85);
+    color: #fff;
+}
